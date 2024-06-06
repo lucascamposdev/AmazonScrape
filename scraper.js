@@ -37,7 +37,7 @@ const fetchAmazonSearchResults = async (search) => {
             const linkElement = item.querySelector('h2 .a-link-normal');
             const productLink = linkElement ? linkElement.getAttribute('href') : '';
 
-            // Montando o objeto Produto
+            // Montando o objeto Produto que retorna ao front-end
             if (titleElement && ratingElement && reviewsElement && imageElement) {
                 const product = {
                     title: titleElement.textContent.trim(),
