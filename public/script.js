@@ -5,7 +5,7 @@ document.getElementById('search-form').addEventListener('submit', async function
     resultsContainer.innerHTML = 'Searching...';
 
     try {
-        const response = await fetch(`/api/scrape?search=${encodeURIComponent(search.value)}`);
+        const response = await fetch(`/api/scrape?keyword=${encodeURIComponent(search.value)}`);
         const data = await response.json();
         search.value = ''
 
