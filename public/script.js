@@ -15,8 +15,9 @@ document.getElementById('search-form').addEventListener('submit', async function
         // Limpa caixa de pesquisa depois da busca
         search.value = ''
 
+        changePageStyle();
         // Checando se ocorreu tudo bem com a requisição e se foram retornados produtos
-        if (response.ok && data.length > 0) {
+        if (data.length > 0) {
             resultsContainer.innerHTML = '';
             data.forEach(product => {
                 // Retirando apenas o valor do rating ex: 4.2
@@ -49,7 +50,7 @@ document.getElementById('search-form').addEventListener('submit', async function
             });
 
             // Ocorreu tudo bem com a requisição porém não foram encontrados produtos
-        } else if(data.length < 1) {
+        } else if(response.ok && data.length < 1) {
             resultsContainer.innerHTML = `No product found.`;
             // Algum erro de requisição vindo do servidor - relacionado ao site da amazon
         } else if(!response.ok){
@@ -61,3 +62,10 @@ document.getElementById('search-form').addEventListener('submit', async function
         resultsContainer.innerHTML = `Internal error, please try again later.`;
     }
 });
+
+const changePageStyle = () =>{
+    const body = document.getElementsByTagName('body')[0]; 
+    const header = document.getElementsByTagName('header')[0]; 
+    body.style.justifyContent = 'flex-start'; 
+    header.style.marginTop = '30px';
+};

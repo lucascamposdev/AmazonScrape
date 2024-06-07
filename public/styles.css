@@ -6,9 +6,12 @@ body {
     font-family: Kanit, sans-serif;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin: 1rem 2rem ;
+    justify-content: center;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    transition: all 1s ease;
 }
 input, button{
     border: none;
@@ -49,13 +52,6 @@ header{
         font-family: monospace;
     }
 
-.contact{
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 1rem 0;
-}
-
 /* Search */
 .search-wrapper{
     padding: 5px 10px;
@@ -80,7 +76,9 @@ header{
 
 /* Results */
 #results{
-    padding: 20px;
+    margin-top: 10px;
+    width: 80%;
+    text-align: center;
 }
 
 /* Product */
@@ -89,6 +87,7 @@ header{
         border-radius: 5px;
         padding: 20px;
         margin-bottom: 10px;
+        text-align: start;
     }
     .product figure {
         width: 75px;
@@ -133,4 +132,6 @@ header{
 /* Footer */
 footer{
     color: #333;
+    padding-block: 20px 40px;
 }
+
