@@ -8,6 +8,7 @@
     <title>Amazon Scraper</title>
 </head>
 <body>
+    
     <header>  
         <h1>Amazon<em class="light-purple"> Scraper_</em></h1>
     </header>
@@ -16,13 +17,18 @@
             <i class="search-icon bi bi-search"></i>
             <input type="text" id="search" placeholder="Enter your search" required autocomplete="off">
         </div>
+ 
+
     </form>
 
-    <div id="results"></div>
+    <section id="results-container">
+        <span class="results-info"></span>
+        <div id="results"></div>
+    </section>
 
     <footer>© 2024, Developed by <a href="https://www.linkedin.com/in/lucascamposdev/"  class="light-purple" target="_blank">/Lucas Campos.</a></footer>
     
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
     <!-- <script src="script-test.js"></script> -->
 </body>
 </html>

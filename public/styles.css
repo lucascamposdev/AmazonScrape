@@ -43,6 +43,7 @@ header{
     justify-content: center;
     color: #333;
     position: relative;
+    padding-top: 20px;
 }
     header h1{
         color: #333;
@@ -75,10 +76,23 @@ header{
     }
 
 /* Results */
-#results{
+#results-container{
     margin-top: 10px;
-    width: 80%;
+    width: 100%;
     text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.results-info{
+    margin-bottom: 20px;
+    color: #807e7e;
+}
+
+#results{
+    margin: auto;
+    width: 80%;
 }
 
 /* Product */
@@ -115,7 +129,7 @@ header{
         gap: 7px;
         padding: 10px;
         border-radius: 3px;
-        border: 1px solid grey;
+        border: 1px solid #807e7e42;
     }
     .product .info .rating i{
         color: rgb(74, 72, 72);
@@ -129,9 +143,33 @@ header{
         cursor: pointer;
     }
 
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 20px 40px;
+}
+
+.pagination button {
+    padding-block: 10px;
+    width: 100px;
+    margin: 0 5px;
+    border: none;
+    background-color: rgb(118, 118, 248);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: Kanit, 'sans-serif';
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
 /* Footer */
 footer{
     color: #333;
-    padding-block: 20px 40px;
+    padding-bottom: 40px;
 }
 
