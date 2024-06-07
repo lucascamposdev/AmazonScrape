@@ -1,26 +1,29 @@
 document.getElementById('search-form').addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    // Encontrando a caixa de pesquisa
+    // Selecionando elementos de busca e container onde serão inseridos os produtos
     const search = document.getElementById('search');
-    // Encontrando o container de respostas
     const resultsContainer = document.getElementById('results');
 
     // Loading
     resultsContainer.innerHTML = 'Searching...';
 
     try {
+        // Fetch dos dados utilizando o valor do input
         const response = await fetch(`/api/scrape?keyword=${encodeURIComponent(search.value)}`);
         const data = await response.json();
+
         // Limpa caixa de pesquisa depois da busca
         search.value = ''
 
+        // Muda o formato da página com o header e caixa de pesquisa agora no topo
         changePageStyle();
-        // Checando se ocorreu tudo bem com a requisição e se foram retornados produtos
+
         if (data.length > 0) {
             resultsContainer.innerHTML = '';
+            // Renderização dos produtos
             data.forEach(product => {
-                // Retirando apenas o valor do rating ex: 4.2
+                // Retirando apenas o valor da nota do rating, ex: 4.2
                 const rating = product.rating.split(" ")[0]
 
                 /* Elemento principal será um <a> 
@@ -31,7 +34,7 @@ document.getElementById('search-form').addEventListener('submit', async function
                 productElement.className = 'product';
                 productElement.href = product.productLink;
                 productElement.target = '_blank';
-                // Montando a product bar
+
                 productElement.innerHTML = `
                     <figure>
                         <img src="${product.imageUrl}" alt="${product.title}">
@@ -46,6 +49,7 @@ document.getElementById('search-form').addEventListener('submit', async function
                         </div>
                     </div>
                 `;
+                // Insere as product bars na tela
                 resultsContainer.appendChild(productElement);
             });
 
