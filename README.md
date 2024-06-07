@@ -2,7 +2,7 @@
 
 # Sobre o projeto
 
-Amazon Scraper é um projeto desenvolvido como tarefa para a vaga de estágio em desenvolvimento backend na Carvalho Aleixo Inc, o script se trata de um pequeno servidor Express com uma rota ```GET``` que realiza o scrapping de produtos no site da Amazon de acordo com a query enviada na solicitação e depois os retorna á uma view. 
+Amazon Scraper é um projeto desenvolvido como tarefa para a vaga de estágio em desenvolvimento backend na Carvalho Aleixo Inc, o script se trata de um pequeno servidor Express com uma rota ```GET``` que realiza o scrapping de produtos no site da Amazon de acordo com a query enviada na solicitação e depois os retorna a uma view. 
 
 # Imagem
 
